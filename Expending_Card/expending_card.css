@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #a0686d;
+
+}
+.container{
+    display: flex;
+    width: 90vw;
+    justify-content: center;
+    align-items: center;
+
+}
+.panel{
+    height: 90vh;
+    flex: 0.5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50px;
+    margin: 10px;
+    position: relative;
+    transition: flex 1s,ease-out 0.5s;
+    box-shadow: 8px 8px 5px black;
+}
+.panel h2{
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    color: white;
+    font-size: 50px;
+    opacity: 0;
+    transition: ease-in 0.2s;
+}
+.panel .wp{
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    color: white;
+    transition: ease-in 0.5s;
+    font-size: 40px;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s;
+}
+.panel.active{
+    flex: 2.5;
+}
+.panel.active h2{
+    opacity: 1;
+}
+.panel.active .wp {
+    opacity: 1;
+    pointer-events: all;
+}
+.panel .cmc{
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    color: white;
+    transition: ease-in 0.5s;
+    font-size: 40px;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s;
+}
+.panel.active .cmc {
+    opacity: 1;
+    pointer-events: all;
+}
+
+@media only screen and (max-width: 1200px) {
+    .panel:last-child{
+        opacity: 0;
+        pointer-events: none;
+
+    }
+    .panel.active h2{
+        font-size: 40px;
+    }
+    .panel.active a,i{
+        font-size: 30px;
+    }
+}
+@media only screen and (max-width: 1000px) {
+   
+    .panel:nth-child(4){
+        opacity: 0;
+        pointer-events: none;
+
+    }
+    .panel.active h2{
+        font-size: 30px;
+    }
+    .panel.active a,i{
+        font-size: 20px;
+    }
+}
